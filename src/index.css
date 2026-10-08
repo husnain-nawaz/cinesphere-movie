@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-cinematic: 'Cinzel', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background:
+      radial-gradient(circle at 8% 2%, rgba(236, 91, 67, 0.10), transparent 28rem),
+      radial-gradient(circle at 95% 18%, rgba(59, 130, 246, 0.07), transparent 34rem),
+      #080b12;
+    color: #f4f4f5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-cinematic {
+    font-family: var(--font-cinematic);
+    letter-spacing: 0.04em;
+  }
+}
+
+button, input, select { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #f9735b;
+  outline-offset: 2px;
+}
+
+::selection { background: #f9735b; color: #090b10; }
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0f17;
+}
+::-webkit-scrollbar-thumb {
+  background: #232738;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #363c54;
+}
+
+/* Glassmorphism and cinema lighting styles */
+.cinema-backdrop-gradient {
+  background: radial-gradient(circle at 50% 20%, rgba(234, 179, 8, 0.08) 0%, rgba(8, 9, 13, 0) 70%);
+}
+
+.cinema-poster-shadow {
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.cinema-card-glow:hover {
+  box-shadow: 0 24px 60px -24px rgba(249, 115, 91, 0.3), 0 0 0 1px rgba(249, 115, 91, 0.3);
+}
+
+.film-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Emerald cinema accent theme */
+@layer utilities {
+  .text-amber-400, .text-amber-300 { color: #34d399 !important; }
+  .bg-amber-400 { background-color: #10b981 !important; }
+  .bg-amber-300 { background-color: #34d399 !important; }
+  .bg-amber-500\/10 { background-color: rgb(16 185 129 / .10) !important; }
+  .bg-amber-500\/15 { background-color: rgb(16 185 129 / .15) !important; }
+  .bg-amber-500\/20 { background-color: rgb(16 185 129 / .20) !important; }
+  .border-amber-400\/20, .border-amber-400\/40, .border-amber-500\/20, .border-amber-500\/30, .border-amber-500\/40, .border-amber-500\/50 { border-color: rgb(16 185 129 / .4) !important; }
+  .shadow-amber-400\/20, .shadow-amber-500\/10 { --tw-shadow-color: rgb(16 185 129 / .2) !important; }
+  .fill-amber-400 { fill: #34d399 !important; }
+  .hover\:text-amber-400:hover, .hover\:text-amber-300:hover { color: #6ee7b7 !important; }
+  .hover\:bg-amber-300:hover { background-color: #34d399 !important; }
+  .focus\:border-amber-400:focus, .focus\:border-amber-500\/80:focus { border-color: #10b981 !important; }
+  .focus\:ring-amber-500\/80:focus { --tw-ring-color: rgb(16 185 129 / .8) !important; }
+  .bg-\[\#f9735b\] { background-color: #10b981 !important; }
+  .bg-\[\#f9735b\]\/10 { background-color: rgb(16 185 129 / .1) !important; }
+  .bg-\[\#f9735b\]\/15 { background-color: rgb(16 185 129 / .15) !important; }
+  .bg-\[\#f9735b\]\/25 { background-color: rgb(16 185 129 / .25) !important; }
+  .text-\[\#ff9a86\], .text-\[\#ff836c\] { color: #6ee7b7 !important; }
+  .text-\[\#f9735b\] { color: #34d399 !important; }
+  .border-\[\#f9735b\]\/40, .border-\[\#f9735b\]\/50 { border-color: rgb(16 185 129 / .5) !important; }
+  .ring-\[\#f9735b\]\/40 { --tw-ring-color: rgb(16 185 129 / .4) !important; }
+  .shadow-\[\#f9735b\]\/10, .shadow-\[\#f9735b\]\/20 { --tw-shadow-color: rgb(16 185 129 / .2) !important; }
+  .hover\:bg-\[\#ff846d\]:hover { background-color: #34d399 !important; }
+}

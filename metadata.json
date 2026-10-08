@@ -1,0 +1,8 @@
+{
+  "name": "CineSphere - Movie Explorer & Trailer Theater",
+  "description": "Discover acclaimed films, watch high-definition trailers, search movies by genre or mood, and rate and review your favorite cinema masterpieces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
